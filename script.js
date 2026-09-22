@@ -9,6 +9,7 @@
 const firstCard = document.querySelector('[data-event="talk"]');
 const labStatus = document.querySelector("#lab-status");
 const detailsTitle = document.querySelector("#details-title");
+const secondCard = document.querySelector('[data-event="workshop"]');
 
 const eventName = "Город в деталях";
 let clickCount =0;
@@ -26,6 +27,13 @@ if (clickCount === 1) {
 }
 
 detailsTitle.textContent = eventName;
+
+
+secondCard.addEventListener("click", () => {
+    detailsTitle.textContent = "Мастерская постеров";
+});
+
+
 
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
 // переменные, счетчик нажатий и условие. Не создавайте второй
