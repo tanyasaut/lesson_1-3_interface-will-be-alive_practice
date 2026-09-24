@@ -36,6 +36,15 @@ secondCard.addEventListener("click", () => {
   detailsTitle.textContent = "Мастерская постеров";
 });
 
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    labStatus.textContent = "Нажата карточка из программы";
+  
+  });
+});
+
+
+
 
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
 // переменные, счетчик нажатий и условие. Не создавайте второй
