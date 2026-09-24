@@ -6,33 +6,35 @@
 // 01. Уберите /* и */ вокруг обработчика, сохраните файл и нажмите
 // первую карточку. Потом переходите к заданию 02 в TASKS.md.
 
+
 const firstCard = document.querySelector('[data-event="talk"]');
 const labStatus = document.querySelector("#lab-status");
 const detailsTitle = document.querySelector("#details-title");
 const secondCard = document.querySelector('[data-event="workshop"]');
 
+const cards = document.querySelectorAll(".event-card");
+const eventCount = document.querySelector("#event-count");
+
+eventCount.textContent = cards.length;
+
 const eventName = "Город в деталях";
-let clickCount =0;
+let clickCount = 0;
 
 firstCard.addEventListener("click", () => {
-  clickCount = clickCount +1; 
-  labStatus.textContent = `${eventName}: нажатий ${clickCount}`;
-   
+  clickCount = clickCount + 1;
+
+  if (clickCount === 1) {
+    labStatus.textContent = `Первое открытие: ${eventName}`;
+  } else {
+    labStatus.textContent = `Повторное открытие: ${eventName}`;
+  }
+
+  detailsTitle.textContent = eventName;
 });
-
-if (clickCount === 1) {
-  labStatus.textContent = `Первое открытие: ${eventName}`;
-} else {
-  labStatus.textContent = `Повторное открытие: ${eventName}`;
-}
-
-detailsTitle.textContent = eventName;
-
 
 secondCard.addEventListener("click", () => {
-    detailsTitle.textContent = "Мастерская постеров";
+  detailsTitle.textContent = "Мастерская постеров";
 });
-
 
 
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
